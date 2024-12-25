@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badminton Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Badminton Fact</h1>
+        <p id="fact"></p>
+        <button id="newFactBtn">Get a New Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Badminton originated in the mid-19th century in England, but it has roots in ancient games played in Greece, China, and India.",
+            "The shuttlecock, or 'birdie,' used in badminton is traditionally made from 16 feathers, usually goose or duck feathers, and is attached to a cork base.",
+            "Badminton became an official Olympic sport in 1992 during the Barcelona Summer Olympics.",
+            "Badminton is considered the fastest racket sport in the world, with shuttlecocks reaching speeds of over 400 km/h (248 mph) in professional matches.",
+            "A standard badminton court is 13.4 meters long and 6.1 meters wide for doubles matches, while it is 5.18 meters wide for singles matches.",
+            "The current scoring system used in badminton is called the 'rally scoring system,' where points can be scored by either the serving or receiving side.",
+            "The longest recorded badminton match lasted 124 minutes during the 2011 Sudirman Cup, showcasing the endurance of the players.",
+            "The Badminton World Championships, held every two years, is one of the most prestigious tournaments in the sport, alongside the Olympics.",
+            "Badminton is extremely popular in Asia, particularly in countries like China, Indonesia, Malaysia, and South Korea, where many top players come from.",
+            "Playing badminton can improve cardiovascular fitness, flexibility, and coordination, making it a great workout for people of all ages."
+        ];
+
+        function getRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[randomIndex];
+        }
+
+        document.getElementById('newFactBtn').addEventListener('click', getRandomFact);
+
+        // Display a fact when the page loads
+        window.onload = getRandomFact;
+    </script>
+</body>
+</html>
